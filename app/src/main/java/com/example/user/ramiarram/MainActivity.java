@@ -1,5 +1,6 @@
 package com.example.user.ramiarram;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -26,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case id.item1:
-                Toast.makeText(this, " Item menu 1", Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(this, TabbedActivity.class);
+                startActivity(i);
                 break;
             case id.item2:
                 Toast.makeText(this, " Item menu 2", Toast.LENGTH_SHORT).show();
