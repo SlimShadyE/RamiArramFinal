@@ -17,7 +17,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class TabbedActivity extends AppCompatActivity {
 
@@ -89,6 +94,7 @@ public class TabbedActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -122,7 +128,7 @@ public class TabbedActivity extends AppCompatActivity {
         }
 
         @Override
-        public CharSequence getPageTitle(int position){
+        public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
                     return "Tab 1";
@@ -131,8 +137,38 @@ public class TabbedActivity extends AppCompatActivity {
                 case 2:
                     return "Tab 3";
             }
-            return  null;
+            return null;
+        }
+
+        public class ListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+
+            ArrayAdapter<String> arrayAdapter;
+            ListView LVCountries;
+            ArrayList<String> arrayList = new ArrayList<>();
+
+            @Override
+            protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.activity_list);
+
+                LVCountries = findViewById(R.id.LVCountries);
+
+                arrayList.add("Germany");
+                arrayList.add("France");
+                arrayList.add("Kfar Yasif");
+
+                arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
+                LVCountries.setAdapter(arrayAdapter);
+
+
+            }
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
         }
     }
 }
+
 
