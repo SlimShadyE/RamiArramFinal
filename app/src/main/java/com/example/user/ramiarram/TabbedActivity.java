@@ -139,7 +139,6 @@ public class TabbedActivity extends AppCompatActivity {
             }
             return null;
         }
-
         public class ListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
             ArrayAdapter<String> arrayAdapter;
@@ -168,6 +167,7 @@ public class TabbedActivity extends AppCompatActivity {
 
             }
         }
+
     }
 }
 
