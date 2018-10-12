@@ -11,22 +11,26 @@ import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    ArrayAdapter<String> arrayAdapter;
+    SpotAdapter arrayAdapter;
     ListView LVCountries;
-    ArrayList<String> arrayList = new ArrayList <>();
+    ArrayList<Spot> arrayList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
         LVCountries = findViewById(R.id.LVCountries);
+        arrayList = new ArrayList <>();
 
-        arrayList.add("Germany");
-        arrayList.add("France");
-        arrayList.add("Kfar Yasif");
+        arrayList.add(new Spot(R.drawable.cr,"Germany"));
+        arrayList.add(new Spot(R.drawable.cr,"Germany"));
+        arrayList.add(new Spot(R.drawable.cr,"Germany"));
 
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
+
+        arrayAdapter = new SpotAdapter(this, R.layout.user_list, arrayList);
         LVCountries.setAdapter(arrayAdapter);
+        LVCountries.setOnItemClickListener(this);
 
 
     }

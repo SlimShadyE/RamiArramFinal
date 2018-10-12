@@ -18,9 +18,8 @@ public class SpotAdapter extends ArrayAdapter<Spot> {
         Context context;
         List<Spot> spotList;
         ImageView imageView;
-        public SpotAdapter(@NonNull Context context, @LayoutRes int resource, @IdRes int
-                textViewResourceId, @NonNull List<Spot> UserList) {
-            super(context, resource, textViewResourceId, UserList);
+        public SpotAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<Spot> UserList) {
+            super(context, resource, UserList);
             this.context=context;
             this.spotList=UserList;
         }
@@ -31,7 +30,7 @@ public class SpotAdapter extends ArrayAdapter<Spot> {
             Spot spot = spotList.get(position);
 
             TextView tvpUserName = (TextView) view.findViewById(R.id.tvSpotName);
-            final ImageView imageView = (ImageView) view.findViewById(R.id.spotImage);
+       //     final ImageView imageView = (ImageView) view.findViewById(R.id.spotImage);
 
             return view;
         }

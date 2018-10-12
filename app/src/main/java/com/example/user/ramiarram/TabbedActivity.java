@@ -47,7 +47,7 @@ public class TabbedActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tabbed);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -138,34 +138,7 @@ public class TabbedActivity extends AppCompatActivity {
                     return "Tab 3";
             }
             return null;
-        }
-        public class ListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-            ArrayAdapter<String> arrayAdapter;
-            ListView LVCountries;
-            ArrayList<String> arrayList = new ArrayList<>();
-
-            @Override
-            protected void onCreate(Bundle savedInstanceState) {
-                super.onCreate(savedInstanceState);
-                setContentView(R.layout.activity_list);
-
-                LVCountries = findViewById(R.id.LVCountries);
-
-                arrayList.add("Germany");
-                arrayList.add("France");
-                arrayList.add("Kfar Yasif");
-
-                arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
-                LVCountries.setAdapter(arrayAdapter);
-
-
-            }
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-            }
         }
 
     }
