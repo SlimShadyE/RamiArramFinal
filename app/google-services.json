@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "18376239748",
+    "firebase_url": "https://ramiarram-13643.firebaseio.com",
+    "project_id": "ramiarram-13643",
+    "storage_bucket": "ramiarram-13643.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18376239748:android:e100c853274e486f",
+        "android_client_info": {
+          "package_name": "com.example.user.ramiarram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18376239748-bhauoo7giptnit6s1e3f4d9hk3ej447v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.ramiarram",
+            "certificate_hash": "090b37ae54543232e42d4a8a51221c2a9a993f6a"
+          }
+        },
+        {
+          "client_id": "18376239748-unn9cgre78c9q66ee6fs3nmm8qfof43o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZtyB76-cr_ZO0Kym9nuIChAA8rCI1xPU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "18376239748-unn9cgre78c9q66ee6fs3nmm8qfof43o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
