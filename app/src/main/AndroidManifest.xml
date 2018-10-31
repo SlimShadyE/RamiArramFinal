@@ -53,13 +53,6 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".TabbedActivity" />
-        <activity android:name=".SearchableActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-                <meta-data android:name = "android.app.searchable"
-                            android:resource=".@xml/activity_searchable"/>
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
