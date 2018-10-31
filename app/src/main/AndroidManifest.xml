@@ -53,6 +53,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".TabbedActivity" />
+        <activity android:name=".PlanActivity"></activity>
     </application>
 
 </manifest>
