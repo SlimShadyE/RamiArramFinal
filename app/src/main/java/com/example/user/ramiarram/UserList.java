@@ -6,15 +6,25 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-public class userList extends AppCompatActivity  {
+import java.util.ArrayList;
+
+public class UserList extends AppCompatActivity  {
 
     private ListView lv;
+    private ArrayList<Spot> spots;
+    private SpotAdapter adapter;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_list);
         lv = (ListView) findViewById(R.id.lvSpots);
+
+   //     spots.add(new Spot());
+
+        adapter = new SpotAdapter(this, R.layout.user_list, spots);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

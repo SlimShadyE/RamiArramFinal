@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SearchableActivity">
-    <searchable xmlns:android="http://schemas.android.com/apk/res/android"
-        android:label="@string/app_label"
-        android:hint="@string/search_hint" >
-    </searchable>
+    tools:context=".LocationActivity">
+
+    <ListView
+        android:id="@+id/lvLocations"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

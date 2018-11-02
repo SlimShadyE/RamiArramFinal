@@ -30,7 +30,8 @@ public class SpotAdapter extends ArrayAdapter<Spot> {
             Spot spot = spotList.get(position);
 
             TextView tvpUserName = (TextView) view.findViewById(R.id.tvSpotName);
-       //     final ImageView imageView = (ImageView) view.findViewById(R.id.spotImage);
+            ImageView imageView = (ImageView) view.findViewById(R.id.imageView2);
+
 
             return view;
         }
