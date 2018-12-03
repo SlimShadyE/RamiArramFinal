@@ -11,9 +11,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_weight="0"
-        android:paddingLeft="5dp"
-        android:paddingTop="10dp"
-        app:srcCompat="@drawable/cr" />
+        app:srcCompat="@drawable/locationlogo" />
 
     <TextView
         android:id="@+id/tvSpotName"

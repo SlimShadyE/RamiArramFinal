@@ -58,7 +58,6 @@ public class CameraGalleryActivity extends AppCompatActivity implements View.OnC
             imageView.setImageBitmap(photo);
         }
 
-
         else if (requestCode==SELECT_IMAGE && resultCode == Activity.RESULT_OK){
             Uri targetUri = data.getData();
             try {
@@ -70,7 +69,6 @@ public class CameraGalleryActivity extends AppCompatActivity implements View.OnC
                 e.printStackTrace();
             }
         }
-
 
     }
 }
