@@ -11,8 +11,11 @@ import java.util.ArrayList;
 public class UserList extends AppCompatActivity  {
 
     private ListView lv;
-    private ArrayList<Spot> spots;
-    private SpotAdapter adapter;
+    private ArrayList<Ride> rides;
+
+    //     spots.add(new Spot());
+
+    RideAdapter adapter = new RideAdapter(this, R.layout.user_list, rides);
 
 
 
@@ -21,10 +24,6 @@ public class UserList extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_list);
         lv = (ListView) findViewById(R.id.lvSpots);
-
-   //     spots.add(new Spot());
-
-        adapter = new SpotAdapter(this, R.layout.user_list, spots);
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

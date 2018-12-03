@@ -1,6 +1,24 @@
+package com.example.user.ramiarram;
+
 public class Ride {
-    private String From, To;
-    private int Price, Time;
+    private String From;
+    private String To;
+    private String Time;
+    private String Driver;
+    private int Price;
+
+    public Ride(String from, String to, String time, int price, String Driver) {
+
+        From = from;
+        To = to;
+        Time = time;
+        Price = price;
+        this.Driver = Driver;
+    }
+
+    public String getDriver() {
+        return Driver;
+    }
 
     public String getFrom() {
         return From;
@@ -18,27 +36,16 @@ public class Ride {
         To = to;
     }
 
+    public String getTime() {
+        return Time;
+    }
+
+    public void setTime(String time) {
+        Time = time;
+    }
+
     public int getPrice() {
         return Price;
     }
 
-    public void setPrice(int price) {
-        Price = price;
-    }
-
-    public int getTime() {
-        return Time;
-    }
-
-    public void setTime(int time) {
-        Time = time;
-    }
-
-    public Ride(String from, String to, int price, int time) {
-
-        From = from;
-        To = to;
-        Price = price;
-        Time = time;
-    }
 }

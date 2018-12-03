@@ -33,7 +33,7 @@ public class LocationsActivity extends AppCompatActivity implements AdapterView.
 
         from = getIntent().getStringExtra("from");
         to = getIntent().getStringExtra("to");
-        source = getIntent().getStringExtra("source");
+        source = getIntent().getStringExtra("destination");
     }
 
     @Override

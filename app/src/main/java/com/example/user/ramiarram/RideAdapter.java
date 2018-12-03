@@ -14,23 +14,34 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class SpotAdapter extends ArrayAdapter<Spot> {
+public class RideAdapter extends ArrayAdapter<Ride> {
         Context context;
-        List<Spot> spotList;
-        ImageView imageView;
-        public SpotAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<Spot> UserList) {
-            super(context, resource, UserList);
+        int resource;
+
+        public RideAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<Ride> rides) {
+            super(context, resource, rides);
             this.context=context;
-            this.spotList=UserList;
+            this.resource = resource;
         }
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater layoutInflater = ((Activity) context).getLayoutInflater();
-            View view = layoutInflater.inflate(R.layout.user_list, parent, false);
-            Spot spot = spotList.get(position);
+            View view = layoutInflater.inflate(resource, parent, false);
 
-            TextView tvpUserName = (TextView) view.findViewById(R.id.tvSpotName);
-            ImageView imageView = (ImageView) view.findViewById(R.id.imageView2);
+            Ride rides =  (Ride) getItem(position);
+
+            TextView tvRide = (TextView) view.findViewById(R.id.tvRide);
+            TextView tvTime = (TextView) view.findViewById(R.id.tvTime);
+            TextView tvDrive = (TextView) view.findViewById(R.id.tvDriver);
+            TextView tvPrice = (TextView) view.findViewById(R.id.tvPrice);
+       //     ImageView imageView = (ImageView) view.findViewById(R.id.imgLocation);
+
+
+            tvPrice.setText(rides.getPrice()+" ");
+            tvTime.setText(rides.getTime());
+            tvRide.setText(rides.getFrom()+ " - " +rides.getTo());
+            tvDrive.setText(rides.getDriver());
+    //        imageView.setImageResource(R.drawable.ic_icon);
 
 
             return view;

@@ -1,8 +1,8 @@
 package com.example.user.ramiarram;
+
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.InputType;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -28,11 +28,11 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
         searchList = findViewById(R.id.lvList);
         ArrayList<String> arrayList = new ArrayList<>();
-        arrayList.add("Ride 1");
-        arrayList.add("Ride 2");
-        arrayList.add("Ride 3");
-        arrayList.add("Ride 4");
-        arrayList.add("Ride 5");
+        arrayList.add("com.example.user.ramiarram.Ride 1");
+        arrayList.add("com.example.user.ramiarram.Ride 2");
+        arrayList.add("com.example.user.ramiarram.Ride 3");
+        arrayList.add("com.example.user.ramiarram.Ride 4");
+        arrayList.add("com.example.user.ramiarram.Ride 5");
 
         arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayList);
         searchList.setAdapter(arrayAdapter);
@@ -83,9 +83,9 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         i.putExtra("to",etTo.getText().toString());
 
         if(etTo == view)
-            i.putExtra("source", "to");
+            i.putExtra("destination", "to");
         else
-            i.putExtra("source", "from");
+            i.putExtra("destination", "from");
         startActivity(i);
     }
 }
