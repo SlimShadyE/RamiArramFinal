@@ -1,6 +1,7 @@
 package com.example.user.ramiarram;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
@@ -8,17 +9,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import java.text.DateFormat;
 import java.util.Calendar;
 
-public class AddActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
-
+public class AddActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener, View.OnClickListener {
+    TextView textView1;
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
-        TextView textView= (TextView) findViewById(R.id.textView);
+         textView= (TextView) findViewById(R.id.DateBt);
+         textView1 = (TextView) findViewById(R.id.TimeBt);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,6 +30,15 @@ public class AddActivity extends AppCompatActivity implements DatePickerDialog.O
                 datePicker.show(getSupportFragmentManager(), "date picker");
             }
         });
+
+        textView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v1) {
+                DialogFragment timePicker = new TimePickerFragment();
+                timePicker.show(getSupportFragmentManager(), "time picker");
+            }
+        });
+
     }
 
     @Override
@@ -38,5 +51,22 @@ public class AddActivity extends AppCompatActivity implements DatePickerDialog.O
         TextView textView= (TextView) findViewById(R.id.textView);
         textView.setText(CurrentDateString);
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        if ( v == textView) {
+            DialogFragment datePicker = new DatePickerFragment();
+            datePicker.show(getSupportFragmentManager(), "date picker");
+        }
+        else if (v == textView1) {
+            DialogFragment timePicker = new TimePickerFragment();
+            timePicker.show(getSupportFragmentManager(), "time picker");
+        }
+    }
+
+    @Override
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        textView.setText("Hour : " + hourOfDay + "Minute : " + minute);
     }
 }
