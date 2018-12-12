@@ -70,15 +70,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case id.item1:
+            case id.Hm:
                 Intent i = new Intent(this, TabbedActivity.class);
                 startActivity(i);
-                break;
-            case id.item2:
-                Toast.makeText(this, " Item menu 2", Toast.LENGTH_SHORT).show();
-                break;
-            case id.item3:
-                Toast.makeText(this, " Item menu 3", Toast.LENGTH_SHORT).show();
                 break;
             }
             return true;

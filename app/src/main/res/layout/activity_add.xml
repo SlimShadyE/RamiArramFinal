@@ -1,27 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddActivity">
 
-    <TextView
-        android:id="@+id/DateBt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="244dp"
-        android:text="Pick a date" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".FromTo">
 
-    <TextView
-        android:id="@+id/TimeBt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/DateBt"
-        android:layout_marginBottom="214dp"
-        android:text="Pick time" />
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="152dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/nyc" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvPlan2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add your ride"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etFrom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="From"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etTo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="To"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            tools:hint="Price"
+            tools:text="Price" />
+
+        <TextView
+            android:id="@+id/DateBt"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:text="Pick a date" />
+
+        <TextView
+            android:id="@+id/TimeBt"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:text="TextView" />
+
+        <Button
+            android:id="@+id/btSearch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Add"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+</LinearLayout>
