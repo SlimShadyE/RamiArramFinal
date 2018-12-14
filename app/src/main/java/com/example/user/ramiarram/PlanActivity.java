@@ -7,8 +7,15 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.sql.Driver;
 import java.util.ArrayList;
+import java.util.Map;
 
 
 public class PlanActivity extends AppCompatActivity {
@@ -16,6 +23,9 @@ public class PlanActivity extends AppCompatActivity {
     ListView lvRides;
     ArrayList<Ride> rides;
     TextView tvMessage;
+    RideAdapter adapter;
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference myRef = database.getReference("Rides");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,17 +35,53 @@ public class PlanActivity extends AppCompatActivity {
         rides = new ArrayList<>();
         lvRides = findViewById(R.id.lvRides);
 
+
         String from = getIntent().getStringExtra("from");
         String to = getIntent().getStringExtra("to");
         if(from == null || to == null){
 
         }else {
             searchFrom(from, to);
-            RideAdapter adapter = new RideAdapter(this, R.layout.activity_ride, rides);
+            adapter = new RideAdapter(this, R.layout.activity_ride, rides);
             lvRides.setAdapter(adapter);
 
             tvMessage = findViewById(R.id.tvMessage);
         }
+        myRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Map<String, String> map = (Map<String, String>) dataSnapshot.getValue();
+                String driver = map.get("driver");
+                String from = map.get("from");
+                String to = map.get("to");
+                String time = map.get("time");
+                int price = Integer.parseInt(map.get("price"));
+
+// public Ride(String from, String to, String time, int price, String Driver) {
+                rides.add(new Ride(from, to,time,price,driver));
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
     }
 

@@ -55,23 +55,24 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            tools:hint="Price"
-            tools:text="Price" />
+            tools:hint="Price"/>
 
         <TextView
             android:id="@+id/DateBt"
             android:layout_width="match_parent"
             android:layout_height="33dp"
-            android:text="Pick a date" />
+            android:text="Pick a date"
+            android:textAlignment="center"/>
 
         <TextView
             android:id="@+id/TimeBt"
             android:layout_width="match_parent"
             android:layout_height="36dp"
-            android:text="TextView" />
+            android:text="Time"
+            android:textAlignment="center"/>
 
         <Button
-            android:id="@+id/btSearch"
+            android:id="@+id/btAdd"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Add"

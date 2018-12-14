@@ -9,20 +9,37 @@
     <Button
         android:id="@+id/driver"
         android:layout_width="196dp"
-        android:layout_height="wrap_content"
+        android:layout_height="46dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="203dp"
+        android:layout_marginTop="191dp"
+        android:background="#7286AF"
+        android:drawableLeft="@drawable/ic_directions_car_black_24dp"
         android:text="Driver"
         tools:text="Driver" />
 
     <Button
         android:id="@+id/psngr"
         android:layout_width="196dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="235dp"
+        android:layout_marginBottom="233dp"
+        android:background="#7286AF"
+        android:drawableLeft="@drawable/ic_directions_walk_black_24dp"
         android:text="Passenger"
         tools:text="Passenger" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_above="@+id/driver"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-191dp"
+        android:text="Hello"
+        android:textAlignment="center"
+        android:textColor="#7286AF"
+        android:textSize="30sp"
+        tools:text="Hello world!" />
 </RelativeLayout>

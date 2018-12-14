@@ -26,8 +26,8 @@ public class Homepage extends AppCompatActivity implements View.OnClickListener 
             startActivity(i);
         }
 
-        else if(v==psngr) {
-            Intent i = new Intent(this, FromTo.class);
+        if(v==psngr){
+            Intent i = new Intent (this, FromTo.class);
             startActivity(i);
         }
 

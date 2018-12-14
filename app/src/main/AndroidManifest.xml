@@ -56,6 +56,8 @@
         <activity android:name=".CameraGalleryActivity" />
         <activity android:name=".LocationsActivity" />
         <activity android:name=".AddActivity"></activity>
+        <activity android:name=".FromTo"></activity>
+        <activity android:name=".PlanActivity"></activity>
     </application>
 
 </manifest>

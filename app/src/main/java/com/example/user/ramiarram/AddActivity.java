@@ -10,23 +10,38 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
 import java.util.Calendar;
 
 public class AddActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener, View.OnClickListener {
-    TextView textView1;
-    TextView textView;
+    TextView Date;
+    TextView Time;
+    Button btAdd;
+    EditText etFrom, etTo;
+    String CurrentDateString, time;
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference myRef = database.getReference("Rides");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
-         textView= (TextView) findViewById(R.id.DateBt);
-         textView1 = (TextView) findViewById(R.id.TimeBt);
-        textView.setOnClickListener(new View.OnClickListener() {
+         Date= (TextView) findViewById(R.id.DateBt);
+         Time = (TextView) findViewById(R.id.TimeBt);
+         etFrom= (EditText) findViewById(R.id.etFrom);
+         etTo= (EditText) findViewById(R.id.etTo);
+         btAdd = (Button) findViewById(R.id.btAdd);
+         btAdd.setOnClickListener(this);
+
+        Date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogFragment datePicker = new DatePickerFragment();
@@ -34,7 +49,7 @@ public class AddActivity extends AppCompatActivity implements DatePickerDialog.O
             }
         });
 
-        textView1.setOnClickListener(new View.OnClickListener() {
+        Time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v1) {
                 DialogFragment timePicker = new TimePickerFragment();
@@ -68,25 +83,31 @@ public class AddActivity extends AppCompatActivity implements DatePickerDialog.O
         c.set(Calendar.YEAR, year);
         c.set(Calendar.MONTH, month);
         c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-        String CurrentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
-        textView.setText(CurrentDateString);
+        CurrentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+        Date.setText(CurrentDateString);
 
     }
 
     @Override
     public void onClick(View v) {
-        if ( v == textView) {
+        if ( v == Date) {
             DialogFragment datePicker = new DatePickerFragment();
             datePicker.show(getSupportFragmentManager(), "date picker");
         }
-        else if (v == textView1) {
+        else if (v == Time) {
             DialogFragment timePicker = new TimePickerFragment();
             timePicker.show(getSupportFragmentManager(), "time picker");
+        }
+        else if(v== btAdd){
+            // public Ride(String from, String to, String time, int price, String Driver) {
+            Ride ride = new Ride(etFrom.getText().toString(),etTo.getText().toString(),time,55,"Rami");
+            myRef.push().setValue(ride);
         }
     }
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        textView1.setText("Hour :  " + hourOfDay + "  Minute : " + minute);
+        time = hourOfDay+":"+minute;
+        Time.setText("Hour :  " + hourOfDay + "  Minute : " + minute);
     }
 }
