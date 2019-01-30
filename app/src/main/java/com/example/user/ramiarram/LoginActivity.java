@@ -1,5 +1,6 @@
 package com.example.user.ramiarram;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         etPassL =  (EditText) findViewById(R.id.etPassL);
         textView2 = (TextView) findViewById(R.id.textView2);
         btLg =  (Button) findViewById(R.id.btLogin);
+        btLg.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -56,7 +58,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-
+                            Intent i = new Intent(LoginActivity.this, Homepage.class);
+                            startActivity(i);
                             //updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.

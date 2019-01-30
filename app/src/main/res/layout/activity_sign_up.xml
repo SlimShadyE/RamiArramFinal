@@ -20,14 +20,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        android:hint="Name"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/etPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textPassword" />
 
     <EditText
@@ -35,6 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Email"
         android:inputType="textEmailAddress" />
 
     <EditText
@@ -42,6 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:hint="Phone number"
         android:inputType="number" />
 
     <Button

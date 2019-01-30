@@ -4,8 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context=".MainActivity"
     >
 
+    <Button
+        android:id="@+id/signin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign in" />
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign up" />
 </LinearLayout>
