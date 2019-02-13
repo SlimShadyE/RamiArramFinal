@@ -5,36 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Profile">
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="97dp"
-        app:srcCompat="@drawable/ic_account_circle_black_24dp" />
+    tools:context=".EditProfile">
 
     <TextView
-        android:id="@+id/Name"
+        android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name : Rami" />
+        android:text="Edit Profile"
+        android:textAlignment="center"
+        android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/Age"
+    <EditText
+        android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Age : 723.4" />
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName" />
 
-    <TextView
-        android:id="@+id/Number"
+    <EditText
+        android:id="@+id/etAge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Number : 0526539847" />
+        android:ems="10"
+        android:hint="Age"
+        android:inputType="textPersonName" />
 
-    <Button
-        android:id="@+id/EditBt"
+    <EditText
+        android:id="@+id/etNum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit" />
-
+        android:ems="10"
+        android:hint="Number"
+        android:inputType="textPersonName" />
 </LinearLayout>

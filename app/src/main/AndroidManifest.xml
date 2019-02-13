@@ -58,7 +58,8 @@
         <activity android:name=".AddActivity" />
         <activity android:name=".FromTo" />
         <activity android:name=".PlanActivity" />
-        <activity android:name=".Profile"></activity>
+        <activity android:name=".Profile" />
+        <activity android:name=".EditProfile"></activity>
     </application>
 
 </manifest>

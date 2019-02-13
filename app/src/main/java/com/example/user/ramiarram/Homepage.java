@@ -36,7 +36,7 @@ public class Homepage extends AppCompatActivity implements View.OnClickListener 
         }
 
         if(v==profile){
-            Intent i = new Intent (this, FromTo.class);
+            Intent i = new Intent (this, Profile.class);
             startActivity(i);
         }
 
