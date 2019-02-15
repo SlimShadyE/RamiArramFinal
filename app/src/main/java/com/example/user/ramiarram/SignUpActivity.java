@@ -16,10 +16,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener{
 
-    EditText etName, etPass, etEmail, etNum;
+    EditText etName, etPass, etEmail, etNum, etAge, etLanguage;
     TextView Title;
     Button btSignup;
     private FirebaseAuth mAuth;
@@ -36,6 +38,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         etPass =  (EditText) findViewById(R.id.etPass);
         etEmail =  (EditText) findViewById(R.id.etEmail);
         etNum =  (EditText) findViewById(R.id.etNum);
+        etAge =  (EditText) findViewById(R.id.etAge);
+        etLanguage =  (EditText) findViewById(R.id.etLanguage);
         btSignup =  (Button) findViewById(R.id.btSignup);
         btSignup.setOnClickListener(this);
         Title =  (TextView) findViewById(R.id.textView);
@@ -62,6 +66,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            final FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            final DatabaseReference myRef = database.getReference("Users");
+                            myRef.child(user.getUid()).setValue(new User("Bashar", "17", "0548859046", "Arabic"));//etName.getText().toString(),etAge.getText().toString(), etNum.getText().toString(), etLanguage.getText().toString()));
                             Intent i = new Intent(SignUpActivity.this, LoginActivity.class);
                             startActivity(i);
                            // updateUI(user);

@@ -38,4 +38,18 @@
         android:ems="10"
         android:hint="Number"
         android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Language"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/btDone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DONE" />
 </LinearLayout>

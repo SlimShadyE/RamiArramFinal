@@ -4,15 +4,10 @@ public class User {
     private String Name;
     private String Age;
     private String Number;
+    private String Language;
 
-    public User(String name, String age, String number) {
-        Name = name;
-        Age = age;
-        Number = number;
-    }
 
     public String getName() {
-
         return Name;
     }
 
@@ -34,5 +29,21 @@ public class User {
 
     public void setNumber(String number) {
         Number = number;
+    }
+
+    public String getLanguage() {
+        return Language;
+    }
+
+    public void setLanguage(String language) {
+        Language = language;
+    }
+
+    public User(String name, String age, String number, String language) {
+
+        Name = name;
+        Age = age;
+        Number = number;
+        Language = language;
     }
 }
