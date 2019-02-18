@@ -68,7 +68,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                             FirebaseUser user = mAuth.getCurrentUser();
                             final FirebaseDatabase database = FirebaseDatabase.getInstance();
                             final DatabaseReference myRef = database.getReference("Users");
-                            myRef.child(user.getUid()).setValue(new User("Bashar", "17", "0548859046", "Arabic"));//etName.getText().toString(),etAge.getText().toString(), etNum.getText().toString(), etLanguage.getText().toString()));
+                            myRef.child(user.getUid()).push().setValue(new User(etName.getText().toString(),etAge.getText().toString(), etNum.getText().toString(), etLanguage.getText().toString()));
                             Intent i = new Intent(SignUpActivity.this, LoginActivity.class);
                             startActivity(i);
                            // updateUI(user);

@@ -6,6 +6,16 @@ public class User {
     private String Number;
     private String Language;
 
+    public User(){
+        super();
+    }
+    public User(String name, String age, String number, String language) {
+
+        Name = name;
+        Age = age;
+        Number = number;
+        Language = language;
+    }
 
     public String getName() {
         return Name;
@@ -39,11 +49,5 @@ public class User {
         Language = language;
     }
 
-    public User(String name, String age, String number, String language) {
 
-        Name = name;
-        Age = age;
-        Number = number;
-        Language = language;
-    }
 }

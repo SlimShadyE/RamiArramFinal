@@ -28,7 +28,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
     FirebaseUser user = mAuth.getCurrentUser();
 
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    final DatabaseReference myRef = database.getReference("Users/"+user.getUid());
+    final DatabaseReference myRef = database.getReference("Users");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,16 +47,17 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                Map<String, String> map = (Map<String, String>) dataSnapshot.getValue();
-                Toast.makeText(getApplication(), "edit", Toast.LENGTH_SHORT).show();
-              ///  String name = map.get("name");
-  /*              String age = map.get("age");
-                String num= map.get("number");
-                String lang= map.get("language");
+                User user = dataSnapshot.getValue(User.class);
+
+
+                String name = user.getName();
+                String age = user.getAge();
+                String num= user.getNumber();
+                String lang= user.getLanguage();
                 tvname.setText(name);
                 tvage.setText(age);
                 tvnum.setText(num);
-                tvlang.setText(lang);*/
+                tvlang.setText(lang);
 
             }
 
@@ -85,7 +86,7 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        Intent i = new Intent (this, AddActivity.class);
+        Intent i = new Intent (this, EditProfile.class);
         startActivity(i);
     }
 }

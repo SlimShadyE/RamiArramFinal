@@ -1,5 +1,6 @@
 package com.example.user.ramiarram;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,7 +36,7 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
         etage = (EditText) findViewById(R.id.etAge);
         etnum = (EditText) findViewById(R.id.etNum);
         etLanguage = (EditText) findViewById(R.id.etLanguage);
-        done = (Button) findViewById(R.id.EditBt);
+        done = (Button) findViewById(R.id.btDone);
         done.setOnClickListener(this);
     }
 
@@ -43,5 +44,7 @@ public class EditProfile extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
         User user1 = new User(etname.getText().toString(), etage.getText().toString(), etnum.getText().toString(), etLanguage.getText().toString() );
         myRef.child(user.getUid()).setValue(user1);
+        Intent i = new Intent (this, Profile.class);
+        startActivity(i);
     }
 }
