@@ -8,7 +8,7 @@
     tools:context=".Profile">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="97dp"
         app:srcCompat="@drawable/ic_account_circle_black_24dp" />
@@ -42,5 +42,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Edit" />
+
+    <Button
+        android:id="@+id/btCamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Camera" />
+
+    <Button
+        android:id="@+id/btGallery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 
 </LinearLayout>

@@ -59,7 +59,16 @@
         <activity android:name=".FromTo" />
         <activity android:name=".PlanActivity" />
         <activity android:name=".Profile" />
-        <activity android:name=".EditProfile"></activity>
+        <activity android:name=".EditProfile" />
+
+        <receiver
+            android:name=".MyReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".MyIntentService"
+            android:exported="false"></service>
     </application>
 
 </manifest>
