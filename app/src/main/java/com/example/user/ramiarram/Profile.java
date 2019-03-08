@@ -2,6 +2,7 @@ package com.example.user.ramiarram;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -120,23 +121,24 @@ public class Profile extends AppCompatActivity implements View.OnClickListener{
             Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             startActivityForResult(i, CAMERA_REQUEST);
 
-        }else{
+        }else if(v == btGallery){
             Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             startActivityForResult(i, SELECT_IMAGE);
+        }else if(v== edit) {
+            Intent i = new Intent(this, EditProfile.class);
+            startActivity(i);
         }
-        //Intent i = new Intent(this, EditProfile.class);
-        //startActivity(i);
     }
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             bitmap = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(bitmap);
-            //String imagePath= saveImage(bitmap);
+            String imagePath= saveImage(bitmap);
 
-            // SharedPreferences pref = getSharedPreferences("mypref",MODE_PRIVATE);
-            //   SharedPreferences.Editor editor= pref.edit();
-            // editor.putString("image",imagePath);
-            //   editor.commit();
+             SharedPreferences pref = getSharedPreferences("mypref",MODE_PRIVATE);
+             SharedPreferences.Editor editor= pref.edit();
+             editor.putString("image",imagePath);
+             editor.commit();
 
         } else if (requestCode == SELECT_IMAGE && resultCode == Activity.RESULT_OK) {
             Uri targetUri = data.getData();

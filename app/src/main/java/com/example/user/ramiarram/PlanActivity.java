@@ -24,6 +24,8 @@ public class PlanActivity extends AppCompatActivity {
     ArrayList<Ride> rides;
     TextView tvMessage;
     RideAdapter adapter;
+    String fromEx;
+    String toEx;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference myRef = database.getReference("Rides");
 
@@ -36,12 +38,10 @@ public class PlanActivity extends AppCompatActivity {
         lvRides = findViewById(R.id.lvRides);
 
 
-        String from = getIntent().getStringExtra("from");
-        String to = getIntent().getStringExtra("to");
-        if(from == null || to == null){
+        fromEx = getIntent().getStringExtra("from");
+        toEx = getIntent().getStringExtra("to");
+        if(fromEx != null && toEx != null){
 
-        }else {
-            searchFrom(from, to);
             adapter = new RideAdapter(this, R.layout.activity_ride, rides);
             lvRides.setAdapter(adapter);
 
@@ -55,11 +55,14 @@ public class PlanActivity extends AppCompatActivity {
                 String from = map.get("from");
                 String to = map.get("to");
                 String time = map.get("time");
-                int price = Integer.parseInt(map.get("price"));
+                //                int price = Integer.parseInt(map.get("price"));
 
-// public Ride(String from, String to, String time, int price, String Driver) {
-                rides.add(new Ride(from, to,time,price,driver));
-                adapter.notifyDataSetChanged();
+                // public Ride(String from, String to, String time, int price, String Driver) {
+                if(from.equals(fromEx) || to.equals(toEx))
+                {
+                    rides.add(new Ride(from, to,time,55,driver));
+                    adapter.notifyDataSetChanged();
+                }
             }
 
             @Override
@@ -85,7 +88,7 @@ public class PlanActivity extends AppCompatActivity {
 
     }
 
-    //if time permits change with real Search
+/*    //if time permits change with real Search
     public void searchFrom(String from, String to){
         if(from.equals("Haifa") && to.equals("Tel aviv")){
             Ride ride1 = new Ride("Haifa", "Tel aviv", "5 PM", 12, "Rami");
@@ -99,5 +102,5 @@ public class PlanActivity extends AppCompatActivity {
             tvMessage.setVisibility(View.VISIBLE);
         }
 
-    }
+    }*/
 }
