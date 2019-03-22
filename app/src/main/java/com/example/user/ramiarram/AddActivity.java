@@ -26,7 +26,7 @@ public class AddActivity extends AppCompatActivity implements DatePickerDialog.O
     TextView Date;
     TextView Time;
     Button btAdd;
-    EditText etFrom, etTo;
+    EditText etFrom, etTo, etPrice, etDriver;
     String CurrentDateString, time;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference myRef = database.getReference("Rides");
@@ -38,6 +38,9 @@ public class AddActivity extends AppCompatActivity implements DatePickerDialog.O
          Time = (TextView) findViewById(R.id.TimeBt);
          etFrom= (EditText) findViewById(R.id.etFrom);
          etTo= (EditText) findViewById(R.id.etTo);
+         etPrice = (EditText) findViewById(R.id.etPrice);
+         etDriver= (EditText) findViewById(R.id.etDriver);
+
          btAdd = (Button) findViewById(R.id.btAdd);
          btAdd.setOnClickListener(this);
 
@@ -100,7 +103,7 @@ public class AddActivity extends AppCompatActivity implements DatePickerDialog.O
         }
         else if(v== btAdd){
             // public Ride(String from, String to, String time, int price, String Driver) {
-            Ride ride = new Ride(etFrom.getText().toString(),etTo.getText().toString(),time,55,"Rami");
+            Ride ride = new Ride(etFrom.getText().toString(),etTo.getText().toString(),time, etPrice.getText().toString(),etDriver.getText().toString());
             myRef.push().setValue(ride);
         }
     }

@@ -48,11 +48,13 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <activity android:name=".UserList" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".TabbedActivity" />
         <activity android:name=".CameraGalleryActivity" />
         <activity android:name=".LocationsActivity" />
         <activity android:name=".AddActivity" />

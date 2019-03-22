@@ -6,24 +6,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity"
-    android:background="@drawable/bgblue"
-    >
+    android:background="#0f3b52">
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="match_parent"
-        android:layout_height="239dp"
+        android:layout_height="148dp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="30dp"
         android:text="Welcome"
-        android:textAlignment="center"
+        android:textColor="#c4c4c4"
         android:textSize="55sp" />
 
     <Button
         android:id="@+id/signin"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="70dp"
+        android:layout_width="215dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="85dp"
+        android:background="@drawable/rounded_bt_white"
         android:text="Sign in"
-        android:visibility="invisible" />
+        android:visibility="visible" />
 
     //android:color="#cc8400" android:width="1dp"
 
@@ -36,8 +38,9 @@
 
     <Button
         android:id="@+id/signup"
-        android:layout_width="250dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="70dp"
+        android:layout_width="215dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="85dp"
+        android:background="@drawable/rounded_bt_white"
         android:text="Sign up" />
 </LinearLayout>

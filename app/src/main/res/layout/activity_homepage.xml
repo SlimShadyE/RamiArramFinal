@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Homepage">
+    tools:context=".Homepage"
+    android:background="#0f3b52">
 
     <Button
         android:id="@+id/driver"
@@ -13,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="191dp"
-        android:background="#7286AF"
+        android:background="@drawable/rounded_bt_white"
         android:drawableLeft="@drawable/ic_directions_car_black_24dp"
         android:text="Driver"
         tools:text="Driver" />
@@ -25,7 +26,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="168dp"
-        android:background="#7286AF"
+        android:background="@drawable/rounded_bt_white"
         android:drawableLeft="@drawable/ic_account_circle_black_24dp"
         android:text="Profile"
         tools:text="Profile" />
@@ -37,7 +38,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="233dp"
-        android:background="#7286AF"
+        android:background="@drawable/rounded_bt_white"
         android:drawableLeft="@drawable/ic_directions_walk_black_24dp"
         android:text="Passenger"
         tools:text="Passenger" />
@@ -51,7 +52,7 @@
         android:layout_marginBottom="-191dp"
         android:text="Hello"
         android:textAlignment="center"
-        android:textColor="#7286AF"
+        android:textColor="#c4c4c4"
         android:textSize="30sp"
         tools:text="Hello world!" />
 </RelativeLayout>

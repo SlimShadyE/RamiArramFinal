@@ -26,6 +26,8 @@ public class PlanActivity extends AppCompatActivity {
     RideAdapter adapter;
     String fromEx;
     String toEx;
+    String price;
+    String driver;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference myRef = database.getReference("Rides");
 
@@ -55,12 +57,14 @@ public class PlanActivity extends AppCompatActivity {
                 String from = map.get("from");
                 String to = map.get("to");
                 String time = map.get("time");
+                String price = map.get("price");
+
                 //                int price = Integer.parseInt(map.get("price"));
 
                 // public Ride(String from, String to, String time, int price, String Driver) {
                 if(from.equals(fromEx) || to.equals(toEx))
                 {
-                    rides.add(new Ride(from, to,time,55,driver));
+                    rides.add(new Ride(from, to,time, price ,driver));
                     adapter.notifyDataSetChanged();
                 }
             }

@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Profile">
+    tools:context=".Profile"
+    android:background="#0f3b52">
+
 
     <ImageView
         android:id="@+id/imageView"
@@ -17,42 +19,100 @@
         android:id="@+id/Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name : Rami" />
+        android:text="Name : Rami"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="#c4c4c4" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:orientation="vertical"></LinearLayout>
 
     <TextView
         android:id="@+id/Age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Age : 723.4" />
+        android:text="Age : 723.4"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="#c4c4c4"
+    />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:orientation="vertical"></LinearLayout>
 
     <TextView
         android:id="@+id/Number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Number : 0526539847" />
+        android:text="Number : 0526539847"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="#c4c4c4"
+    />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:orientation="vertical"></LinearLayout>
 
     <TextView
         android:id="@+id/Language"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Language : Arabic" />
+        android:text="Language : Arabic"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textColor="#c4c4c4"
+    />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="vertical"></LinearLayout>
 
     <Button
         android:id="@+id/EditBt"
+        android:layout_width="182dp"
+        android:layout_height="37dp"
+
+        android:background="@drawable/rounded_button"
+        android:gravity="center"
+        android:text="Edit"
+        android:textAlignment="center" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Edit" />
+        android:layout_height="14dp"
+        android:orientation="vertical"></LinearLayout>
 
     <Button
         android:id="@+id/btCamera"
+        android:layout_width="222dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_button"
+        android:text="Camera"
+        android:layout_marginLeft="85dp"
+        android:textAlignment="center" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Camera" />
+        android:layout_height="14dp"
+        android:orientation="vertical"></LinearLayout>
 
     <Button
         android:id="@+id/btGallery"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Gallery" />
+        android:layout_width="222dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_button"
+        android:text="Gallery"
+        android:layout_marginLeft="85dp"
+        android:textAlignment="center"
+
+        />
 
 </LinearLayout>

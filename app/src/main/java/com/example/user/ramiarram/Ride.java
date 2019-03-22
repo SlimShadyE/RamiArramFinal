@@ -5,9 +5,9 @@ public class Ride {
     private String To;
     private String Time;
     private String Driver;
-    private int Price;
+    private String Price;
 
-    public Ride(String from, String to, String time, int price, String Driver) {
+    public Ride(String from, String to, String time, String price, String Driver) {
 
         From = from;
         To = to;
@@ -44,8 +44,11 @@ public class Ride {
         Time = time;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return Price;
     }
 
+    public void setDriver(String driver) {
+        Driver = driver;
+    }
 }

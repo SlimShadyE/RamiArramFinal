@@ -70,16 +70,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.Hm:
-                Intent i = new Intent(this, TabbedActivity.class);
-                startActivity(i);
-                break;
-            }
-            return true;
-        }
+    //@Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        switch (item.getItemId()) {
+//            case R.id.Hm:
+//                Intent i = new Intent(this, TabbedActivity.class);
+//                startActivity(i);
+//                break;
+//            }
+//            return true;
+//        }
 
     @Override
     public void onClick(View v) {
