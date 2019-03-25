@@ -105,6 +105,8 @@ public class AddActivity extends AppCompatActivity implements DatePickerDialog.O
             // public Ride(String from, String to, String time, int price, String Driver) {
             Ride ride = new Ride(etFrom.getText().toString(),etTo.getText().toString(),time, etPrice.getText().toString(),etDriver.getText().toString());
             myRef.push().setValue(ride);
+            Intent i = new Intent (this, Homepage.class);
+            startActivity(i);
         }
     }
 

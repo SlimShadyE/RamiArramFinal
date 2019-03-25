@@ -16,6 +16,9 @@ public class Ride {
         this.Driver = Driver;
     }
 
+    public Ride() {
+    }
+
     public String getDriver() {
         return Driver;
     }

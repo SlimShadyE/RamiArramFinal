@@ -52,19 +52,11 @@ public class PlanActivity extends AppCompatActivity {
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Map<String, String> map = (Map<String, String>) dataSnapshot.getValue();
-                String driver = map.get("driver");
-                String from = map.get("from");
-                String to = map.get("to");
-                String time = map.get("time");
-                String price = map.get("price");
+                Ride ride=  dataSnapshot.getValue(Ride.class);
 
-                //                int price = Integer.parseInt(map.get("price"));
-
-                // public Ride(String from, String to, String time, int price, String Driver) {
-                if(from.equals(fromEx) || to.equals(toEx))
+                if(ride.getFrom().equals(fromEx) && ride.getTo().equals(toEx))
                 {
-                    rides.add(new Ride(from, to,time, price ,driver));
+                    rides.add(ride);
                     adapter.notifyDataSetChanged();
                 }
             }
@@ -91,20 +83,4 @@ public class PlanActivity extends AppCompatActivity {
         });
 
     }
-
-/*    //if time permits change with real Search
-    public void searchFrom(String from, String to){
-        if(from.equals("Haifa") && to.equals("Tel aviv")){
-            Ride ride1 = new Ride("Haifa", "Tel aviv", "5 PM", 12, "Rami");
-            Ride ride2 = new Ride("Haifa", "Kfar Yasif", "8 PM", 17, "Yousef");
-            rides.add(ride1);
-            rides.add(ride2);
-        }else if(from.equals("Kfar Yasif") && to.equals("Tel aviv")){
-            Ride ride3 = new Ride("Kfar Yasif", "Tel aviv", "9 AM", 25, "Fadi");
-            rides.add(ride3);
-        }else{
-            tvMessage.setVisibility(View.VISIBLE);
-        }
-
-    }*/
 }

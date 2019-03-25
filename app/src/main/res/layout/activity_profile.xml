@@ -77,8 +77,9 @@
 
     <Button
         android:id="@+id/EditBt"
-        android:layout_width="182dp"
-        android:layout_height="37dp"
+        android:layout_width="222dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="85dp"
 
         android:background="@drawable/rounded_button"
         android:gravity="center"
